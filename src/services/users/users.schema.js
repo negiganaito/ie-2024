@@ -10,7 +10,8 @@ export const userSchema = Type.Object(
   {
     _id: ObjectIdSchema(),
     email: Type.String(),
-    password: Type.Optional(Type.String())
+    password: Type.Optional(Type.String()),
+    createAt: Type.Number()
   },
   { $id: 'User', additionalProperties: false }
 )
@@ -28,7 +29,10 @@ export const userDataSchema = Type.Pick(userSchema, ['email', 'password'], {
 })
 export const userDataValidator = getValidator(userDataSchema, dataValidator)
 export const userDataResolver = resolve({
-  password: passwordHash({ strategy: 'local' })
+  password: passwordHash({ strategy: 'local' }),
+  createAt: async () => {
+    return Date.now()
+  }
 })
 
 // Schema for updating existing entries
