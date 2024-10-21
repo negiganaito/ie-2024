@@ -2,30 +2,30 @@
 import { authenticate } from '@feathersjs/authentication'
 
 import { hooks as schemaHooks } from '@feathersjs/schema'
+import { AnnexService, getOptions } from './annexs.class.js'
 import {
+  annexDataResolver,
   annexDataValidator,
+  annexExternalResolver,
+  annexPatchResolver,
   annexPatchValidator,
+  annexQueryResolver,
   annexQueryValidator,
   annexResolver,
-  annexExternalResolver,
-  annexDataResolver,
-  annexPatchResolver,
-  annexQueryResolver
 } from './annexs.schema.js'
-import { AnnexService, getOptions } from './annexs.class.js'
-import { annexPath, annexMethods } from './annexs.shared.js'
+import { annexMethods, annexPath } from './annexs.shared.js'
 
 export * from './annexs.class.js'
 export * from './annexs.schema.js'
 
 // A configure function that registers the service and its hooks via `app.configure`
-export const annex = (app) => {
+export function annex(app) {
   // Register our service on the Feathers application
   app.use(annexPath, new AnnexService(getOptions(app)), {
     // A list of all methods this service exposes externally
     methods: annexMethods,
     // You can add additional custom events to be sent to clients here
-    events: []
+    events: [],
   })
   // Initialize hooks
   app.service(annexPath).hooks({
@@ -33,22 +33,31 @@ export const annex = (app) => {
       all: [
         authenticate('jwt'),
         schemaHooks.resolveExternal(annexExternalResolver),
-        schemaHooks.resolveResult(annexResolver)
-      ]
+        schemaHooks.resolveResult(annexResolver),
+      ],
     },
     before: {
-      all: [schemaHooks.validateQuery(annexQueryValidator), schemaHooks.resolveQuery(annexQueryResolver)],
+      all: [
+        schemaHooks.validateQuery(annexQueryValidator),
+        schemaHooks.resolveQuery(annexQueryResolver),
+      ],
       find: [],
       get: [],
-      create: [schemaHooks.validateData(annexDataValidator), schemaHooks.resolveData(annexDataResolver)],
-      patch: [schemaHooks.validateData(annexPatchValidator), schemaHooks.resolveData(annexPatchResolver)],
-      remove: []
+      create: [
+        schemaHooks.validateData(annexDataValidator),
+        schemaHooks.resolveData(annexDataResolver),
+      ],
+      patch: [
+        schemaHooks.validateData(annexPatchValidator),
+        schemaHooks.resolveData(annexPatchResolver),
+      ],
+      remove: [],
     },
     after: {
-      all: []
+      all: [],
     },
     error: {
-      all: []
-    }
+      all: [],
+    },
   })
 }

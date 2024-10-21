@@ -1,6 +1,7 @@
+import authenticationClient from '@feathersjs/authentication-client'
 // For more information about this file see https://dove.feathersjs.com/guides/cli/client.html
 import { feathers } from '@feathersjs/feathers'
-import authenticationClient from '@feathersjs/authentication-client'
+
 export {}
 
 export {}
@@ -13,7 +14,7 @@ export {}
  * @see https://dove.feathersjs.com/api/client.html
  * @returns The Feathers client application
  */
-export const createClient = (connection, authenticationOptions = {}) => {
+export function createClient(connection, authenticationOptions = {}) {
   const client = feathers()
 
   client.configure(connection)

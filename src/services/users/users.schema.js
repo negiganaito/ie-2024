@@ -1,8 +1,6 @@
-// // For more information about this file see https://dove.feathersjs.com/guides/cli/service.schemas.html
-import { resolve } from '@feathersjs/schema'
-import { Type, getValidator, querySyntax } from '@feathersjs/typebox'
-import { ObjectIdSchema } from '@feathersjs/typebox'
 import { passwordHash } from '@feathersjs/authentication-local'
+import { resolve } from '@feathersjs/schema'
+import { getValidator, ObjectIdSchema, querySyntax, Type } from '@feathersjs/typebox'
 import { dataValidator, queryValidator } from '../../validators.js'
 
 // Main data model schema
@@ -11,37 +9,35 @@ export const userSchema = Type.Object(
     _id: ObjectIdSchema(),
     email: Type.String(),
     password: Type.Optional(Type.String()),
-    createAt: Type.Number()
+    createAt: Type.Number(),
   },
-  { $id: 'User', additionalProperties: false }
+  { $id: 'User', additionalProperties: false },
 )
 export const userValidator = getValidator(userSchema, dataValidator)
 export const userResolver = resolve({})
 
 export const userExternalResolver = resolve({
   // The password should never be visible externally
-  password: async () => undefined
+  password: async () => undefined,
 })
 
 // Schema for creating new entries
 export const userDataSchema = Type.Pick(userSchema, ['email', 'password'], {
-  $id: 'UserData'
+  $id: 'UserData',
 })
 export const userDataValidator = getValidator(userDataSchema, dataValidator)
 export const userDataResolver = resolve({
   password: passwordHash({ strategy: 'local' }),
-  createAt: async () => {
-    return Date.now()
-  }
+  createAt: async () => Date.now(),
 })
 
 // Schema for updating existing entries
 export const userPatchSchema = Type.Partial(userSchema, {
-  $id: 'UserPatch'
+  $id: 'UserPatch',
 })
 export const userPatchValidator = getValidator(userPatchSchema, dataValidator)
 export const userPatchResolver = resolve({
-  password: passwordHash({ strategy: 'local' })
+  password: passwordHash({ strategy: 'local' }),
 })
 
 // Schema for allowed query properties
@@ -50,9 +46,9 @@ export const userQuerySchema = Type.Intersect(
   [
     querySyntax(userQueryProperties),
     // Add additional query properties here
-    Type.Object({}, { additionalProperties: false })
+    Type.Object({}, { additionalProperties: false }),
   ],
-  { additionalProperties: false }
+  { additionalProperties: false },
 )
 export const userQueryValidator = getValidator(userQuerySchema, queryValidator)
 export const userQueryResolver = resolve({
@@ -63,5 +59,5 @@ export const userQueryResolver = resolve({
     }
 
     return value
-  }
+  },
 })

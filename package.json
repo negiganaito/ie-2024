@@ -1,47 +1,34 @@
 {
   "name": "ie",
-  "description": "",
+  "type": "module",
   "version": "0.0.0",
-  "homepage": "",
   "private": true,
+  "description": "",
+  "author": {},
+  "contributors": [],
+  "homepage": "",
+  "bugs": {},
   "keywords": [
     "feathers"
   ],
-  "author": {},
-  "contributors": [],
-  "bugs": {},
+  "main": "src/client",
+  "files": [
+    "lib/**/*.d.ts",
+    "lib/**/*.shared.js",
+    "lib/client.js"
+  ],
   "engines": {
     "node": ">= 20.17.0"
   },
-  "feathers": {
-    "language": "js",
-    "packager": "pnpm",
-    "database": "mongodb",
-    "framework": "express",
-    "transports": [
-      "rest",
-      "websockets"
-    ],
-    "schema": "typebox"
-  },
-  "directories": {
-    "lib": "src",
-    "test": "test"
-  },
-  "files": [
-    "lib/client.js",
-    "lib/**/*.d.ts",
-    "lib/**/*.shared.js"
-  ],
-  "main": "src/client",
-  "type": "module",
   "scripts": {
-    "start": "node src",
+    "bundle:client": "npm pack --pack-destination ./public",
     "dev": "nodemon src/",
-    "prettier": "npx prettier \"**/*.js\" --write",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
     "mocha": "cross-env NODE_ENV=test mocha test/ --recursive --exit",
-    "test": "npm run mocha",
-    "bundle:client": "npm pack --pack-destination ./public"
+    "prettier": "pnpx prettier \"**/*.js\" --write",
+    "start": "node src",
+    "test": "npm run mocha"
   },
   "dependencies": {
     "@feathersjs/adapter-commons": "5.0.30",
@@ -63,12 +50,31 @@
     "winston": "^3.15.0"
   },
   "devDependencies": {
+    "@antfu/eslint-config": "3.8.0",
+    "@eslint/js": "^9.13.0",
     "@feathersjs/cli": "5.0.30",
     "@feathersjs/rest-client": "5.0.30",
     "axios": "1.7.7",
     "cross-env": "^7.0.3",
+    "eslint": "9.13.0",
+    "globals": "^15.11.0",
     "mocha": "10.7.3",
     "nodemon": "^3.1.7",
-    "prettier": "^3.3.3"
+    "prettier": "3.3.3"
+  },
+  "directories": {
+    "lib": "src",
+    "test": "test"
+  },
+  "feathers": {
+    "database": "mongodb",
+    "framework": "express",
+    "language": "js",
+    "packager": "pnpm",
+    "schema": "typebox",
+    "transports": [
+      "rest",
+      "websockets"
+    ]
   }
 }

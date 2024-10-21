@@ -1,23 +1,23 @@
+import configuration from '@feathersjs/configuration'
+import express, {
+  cors,
+  errorHandler,
+  json,
+  notFound,
+  rest,
+  serveStatic,
+  urlencoded,
+} from '@feathersjs/express'
 // For more information about this file see https://dove.feathersjs.com/guides/cli/application.html
 import { feathers } from '@feathersjs/feathers'
-import express, {
-  rest,
-  json,
-  urlencoded,
-  cors,
-  serveStatic,
-  notFound,
-  errorHandler
-} from '@feathersjs/express'
-import configuration from '@feathersjs/configuration'
 import socketio from '@feathersjs/socketio'
-import { configurationValidator } from './configuration.js'
-import { logger } from './logger.js'
-import { logError } from './hooks/log-error.js'
-import { mongodb } from './mongodb.js'
 import { authentication } from './authentication.js'
-import { services } from './services/index.js'
 import { channels } from './channels.js'
+import { configurationValidator } from './configuration.js'
+import { logError } from './hooks/log-error.js'
+import { logger } from './logger.js'
+import { mongodb } from './mongodb.js'
+import { services } from './services/index.js'
 
 const app = express(feathers())
 
@@ -34,9 +34,9 @@ app.configure(rest())
 app.configure(
   socketio({
     cors: {
-      origin: app.get('origins')
-    }
-  })
+      origin: app.get('origins'),
+    },
+  }),
 )
 app.configure(mongodb)
 
@@ -52,16 +52,16 @@ app.use(errorHandler({ logger }))
 // Register hooks that run on all service methods
 app.hooks({
   around: {
-    all: [logError]
+    all: [logError],
   },
   before: {},
   after: {},
-  error: {}
+  error: {},
 })
 // Register application setup and teardown hooks here
 app.hooks({
   setup: [],
-  teardown: []
+  teardown: [],
 })
 
 export { app }

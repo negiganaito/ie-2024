@@ -1,9 +1,9 @@
-import '@feathersjs/transport-commons'
 import { logger } from './logger.js'
+import '@feathersjs/transport-commons'
 
-export const channels = (app) => {
+export function channels(app) {
   logger.warn(
-    'Publishing all events to all authenticated users. See `channels.js` and https://dove.feathersjs.com/api/channels.html for more information.'
+    'Publishing all events to all authenticated users. See `channels.js` and https://dove.feathersjs.com/api/channels.html for more information.',
   )
 
   app.on('connection', (connection) => {
@@ -23,7 +23,6 @@ export const channels = (app) => {
     }
   })
 
-  // eslint-disable-next-line no-unused-vars
   app.publish((data, context) => {
     // Here you can add event publishers to channels set up in `channels.js`
     // To publish only for a specific event use `app.publish(eventname, () => {})`

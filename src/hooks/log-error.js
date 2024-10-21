@@ -1,9 +1,10 @@
-import { logger } from '../logger.js'
+import { logger } from '../logger'
 
-export const logError = async (context, next) => {
+export async function logError(context, next) {
   try {
     await next()
-  } catch (error) {
+  }
+  catch (error) {
     logger.error(error.stack)
     // Log validation errors
     if (error.data) {
