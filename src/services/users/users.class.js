@@ -6,6 +6,10 @@ export class UserService extends MongoDBService {}
 export function getOptions(app) {
   return {
     paginate: app.get('paginate'),
-    Model: app.get('mongodbClient').then(db => db.collection('users')),
+    Model: app.get('mongodbClient').then(db => db.collection('users')).then((collection) => {
+      collection.createIndex({ email: 1 }, { unique: true })
+
+      return collection
+    }),
   }
 }

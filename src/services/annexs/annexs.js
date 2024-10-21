@@ -21,7 +21,9 @@ export * from './annexs.schema.js'
 // A configure function that registers the service and its hooks via `app.configure`
 export function annex(app) {
   // Register our service on the Feathers application
-  app.use(annexPath, new AnnexService(getOptions(app)), {
+  app.use(annexPath, new AnnexService(
+    getOptions(app),
+  ), {
     // A list of all methods this service exposes externally
     methods: annexMethods,
     // You can add additional custom events to be sent to clients here
