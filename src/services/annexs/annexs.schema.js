@@ -1,58 +1,97 @@
 // // For more information about this file see https://dove.feathersjs.com/guides/cli/service.schemas.html
-import { resolve, virtual } from '@feathersjs/schema'
+import { resolve } from '@feathersjs/schema'
 import { getValidator, ObjectIdSchema, querySyntax, Type } from '@feathersjs/typebox'
 import { dataValidator, queryValidator } from '../../validators.js'
-import { userSchema } from '../users/users.schema.js'
 
 // Main data model schema
-export const annexSchema = Type.Object(
+const annexSchema = Type.Object(
   {
     _id: ObjectIdSchema(),
-    text: Type.String(),
     createdAt: Type.Number(),
     userId: Type.String({ objectid: true }),
-    user: Type.Ref(userSchema),
-  },
-  { $id: 'Annex', additionalProperties: false },
-)
-export const annexValidator = getValidator(annexSchema, dataValidator)
-export const annexResolver = resolve({
-  user: virtual(async (annex, context) => {
-    // Associate the user that sent the message
-    return context.app.service('users').get(annex.userId)
-  }),
-})
+    //
+    annexType: Type.Number(),
+    annexCreationDate: Type.String(),
+    annexNo: Type.String(),
+    contractNo: Type.String(),
+    projectName: Type.String(),
+    itemName: Type.String(),
+    annexShortLocation: Type.String(),
+    contractSignedDate: Type.String(),
+    //
+    pAName: Type.String(),
+    pARepresented: Type.String(),
+    pAAddress: Type.String(),
+    pAIdCode: Type.String(),
 
-export const annexExternalResolver = resolve({})
+    pAAnnexSignName: Type.String(),
+
+    termValue: Type.Any(),
+  },
+  { $id: 'Annex', additionalProperties: true },
+)
+
+const termValueSchemas = {
+  // Change party A information
+  1: Type.Object({
+    information: Type.String(),
+  }),
+
+  // Change addition amount
+  2: Type.Object({
+    previousAmount: Type.String(),
+    additionalAmount: Type.String(),
+    totalAmount: Type.String(),
+  }),
+}
+
+async function termValueValidator(context) {
+  const { annexType, termValue } = context.data
+
+  const schema = termValueSchemas[annexType]
+
+  if (!schema) {
+    throw new Error(`Invalid annexType: ${annexType}`)
+  }
+
+  // Validate the termValue with the corresponding schema
+  const validator = getValidator(schema, dataValidator)
+  const validation = validator(termValue)
+
+  return validation
+}
+
+const annexValidator = getValidator(annexSchema, dataValidator)
+const annexResolver = resolve({ })
+
+const annexExternalResolver = resolve({ })
 
 // Schema for creating new entries
-export const annexDataSchema = Type.Pick(annexSchema, ['text'], {
+const annexDataSchema = Type.Pick(annexSchema, ['text'], {
   $id: 'AnnexData',
 })
-export const annexDataValidator = getValidator(annexDataSchema, dataValidator)
-export const annexDataResolver = resolve({
-  userId: async (_value, _message, context) => {
-    // Associate the record with the id of the authenticated user
-    return context.params.user._id
-  },
+
+const annexDataValidator = getValidator(annexDataSchema, dataValidator)
+const annexDataResolver = resolve({
+
   createdAt: async () => {
     return Date.now()
   },
 })
 
 // Schema for updating existing entries
-export const annexPatchSchema = Type.Partial(annexSchema, {
+const annexPatchSchema = Type.Partial(annexSchema, {
   $id: 'AnnexPatch',
 })
-export const annexPatchValidator = getValidator(
+const annexPatchValidator = getValidator(
   annexPatchSchema,
   dataValidator,
 )
-export const annexPatchResolver = resolve({})
+const annexPatchResolver = resolve({})
 
 // Schema for allowed query properties
-export const annexQueryProperties = Type.Pick(annexSchema, ['_id', 'text', 'createdAt', 'userId'])
-export const annexQuerySchema = Type.Intersect(
+const annexQueryProperties = Type.Pick(annexSchema, ['_id', 'text', 'createdAt', 'userId'])
+const annexQuerySchema = Type.Intersect(
   [
     querySyntax(annexQueryProperties),
     // Add additional query properties here
@@ -60,11 +99,11 @@ export const annexQuerySchema = Type.Intersect(
   ],
   { additionalProperties: false },
 )
-export const annexQueryValidator = getValidator(
+const annexQueryValidator = getValidator(
   annexQuerySchema,
   queryValidator,
 )
-export const annexQueryResolver = resolve({
+const annexQueryResolver = resolve({
   userId: async (value, user, context) => {
     // We want to be able to find all messages but
     // only let a user modify their own messages otherwise
@@ -75,3 +114,21 @@ export const annexQueryResolver = resolve({
     return value
   },
 })
+
+export {
+  annexDataResolver,
+  annexDataSchema,
+  annexDataValidator,
+  annexExternalResolver,
+  annexPatchResolver,
+  annexPatchSchema,
+  annexPatchValidator,
+  annexQueryProperties,
+  annexQueryResolver,
+  annexQuerySchema,
+  annexQueryValidator,
+  annexResolver,
+  annexSchema,
+  annexValidator,
+  termValueValidator,
+}

@@ -46,8 +46,11 @@
     "@feathersjs/transport-commons": "5.0.30",
     "@feathersjs/typebox": "5.0.30",
     "compression": "^1.7.4",
+    "exceljs": "4.4.0",
+    "handlebars": "4.7.8",
     "mongodb": "6.8.0",
-    "winston": "^3.15.0"
+    "winston": "^3.15.0",
+    "xlsx-template": "1.4.4"
   },
   "devDependencies": {
     "@antfu/eslint-config": "3.8.0",
