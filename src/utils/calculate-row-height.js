@@ -11,3 +11,5 @@ export function calculateRowHeight(text, totalWidthInPixels, fontSize) {
   const rowHeightInPoints = totalLines * fontSize * 1.2 // Adjust for font size and line height
   return rowHeightInPoints
 }
+
+export const EXCEL_POINT_PER_PIXEL = 0.75
