@@ -33,16 +33,26 @@ const annexSchema = Type.Object(
 
 const termValueSchemas = {
   // Change party A information
+  0: Type.String(),
+
   1: Type.Object({
     information: Type.String(),
   }),
 
   // Change addition amount
   2: Type.Object({
+    amountInWord: Type.String(),
     previousAmount: Type.String(),
     additionalAmount: Type.String(),
     totalAmount: Type.String(),
   }),
+
+  // port of Destination and Shipment Term change
+  3: Type.Object({
+    portOfDestination: Type.String(),
+    shipmentTerm: Type.String(),
+  }),
+
 }
 
 async function termValueValidator(context) {
