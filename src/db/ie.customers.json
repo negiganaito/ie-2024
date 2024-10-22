@@ -1,0 +1,236 @@
+[{
+  "_id": {
+    "$oid": "67176070e4056317abcf3f91"
+  },
+  "company": "Tree Frame Co., LTD",
+  "location": "Thailand",
+  "representedBy": "Mrs. Pornnapa Tawannachot",
+  "address": "788 Moo2 , Bang Khanun , Bang Kruai, Nonthaburi, 11130 Thailand",
+  "optional": {
+    "position": "Managing Director",
+    "taxCode": "010-555-501-3204"
+  },
+  "userId": {
+    "$oid": "67175cbd7e02c201eefe7983"
+  },
+  "createdAt": 1729585264252
+}, {
+  "_id": {
+    "$oid": "6717619cb31f45fa1bdf39b8"
+  },
+  "company": "McNab Debelopments (QLD) Pty Ltd",
+  "location": "Australia",
+  "representedBy": "Dan Rowe",
+  "address": "Level 1, 12 Neil Street, Toowoomba, QLD 4350",
+  "optional": {
+    "position": "General Director-Steel",
+    "taxCode": "63 118 748 548"
+  },
+  "userId": {
+    "$oid": "67175cbd7e02c201eefe7983"
+  },
+  "createdAt": 1729585564059
+}, {
+  "_id": {
+    "$oid": "6717630fb31f45fa1bdf39b9"
+  },
+  "company": "UNIMORE TRADING CORP",
+  "location": "Philippines",
+  "representedBy": "Mr. Fenton Chua",
+  "address": "Unit C 18th Flr Lafayette 3, Eastwood city, Bagumbayan, Quezon city, Philippines",
+  "optional": {
+    "position": "President",
+    "tel": "(+632) 718-5291",
+    "fax": "(+632) 718-5291",
+    "website": "www.unimoretrading.com"
+  },
+  "userId": {
+    "$oid": "67175cbd7e02c201eefe7983"
+  },
+  "createdAt": 1729585935274
+}, {
+  "_id": {
+    "$oid": "67176455b31f45fa1bdf39ba"
+  },
+  "company": "CORWEL CONSULTING LIMITED",
+  "location": "Hong Kong",
+  "representedBy": "Narongkorn Meakwatana",
+  "address": "Unit D-1, 17/F, Billion Plaza 2, 10 Cheung Yue Street, Lai Chi Kok, Kowloon, Hong Kong",
+  "optional": {
+    "position": "Managing Director",
+    "tel": "+6681 7103444"
+  },
+  "userId": {
+    "$oid": "67175cbd7e02c201eefe7983"
+  },
+  "createdAt": 1729586261461
+}, {
+  "_id": {
+    "$oid": "671764d2b31f45fa1bdf39bb"
+  },
+  "company": "CIVIL MASTER SOLUTION CO., LTD.",
+  "location": "Thailand",
+  "representedBy": "Mr. Yanapol Thitikavanont",
+  "address": "86/319 Kanchanaphisek Road, Dokmai, Prawet, Bangkok, Thailand",
+  "optional": {
+    "position": "General Manager",
+    "tel": "+6662 4791615",
+    "taxCode": "0105557160492"
+  },
+  "userId": {
+    "$oid": "67175cbd7e02c201eefe7983"
+  },
+  "createdAt": 1729586386340
+}, {
+  "_id": {
+    "$oid": "671765891b9b967cd22f7730"
+  },
+  "company": "JHIA CONSTRUCTION CORPORATION",
+  "location": "Philippines",
+  "representedBy": "James R. Onia",
+  "address": "Unit 2 Rendon Compound, Quezon Ave., Poblacion, Alaminos City, Pangasinan 2404",
+  "optional": {
+    "position": "President",
+    "tel": "(044)-802-7051\n0917-167-9292"
+  },
+  "userId": {
+    "$oid": "67175cbd7e02c201eefe7983"
+  },
+  "createdAt": 1729586569090
+}, {
+  "_id": {
+    "$oid": "6717662d1b9b967cd22f7731"
+  },
+  "location": "Thailand",
+  "company": "THE I.D.8 CO., LTD",
+  "representedBy": "Mr. Adichai Mongkolwattanakul",
+  "address": "788 Moo 2 Bang Khanun, Bang Kruai District, Nonthaburi, 11130 THAILAND",
+  "optional": {
+    "position": "Managing Director",
+    "taxCode": "012-556-402-7689"
+  },
+  "userId": {
+    "$oid": "67175cbd7e02c201eefe7983"
+  },
+  "createdAt": 1729586733799
+}, {
+  "_id": {
+    "$oid": "6717668e607d075fb893404b"
+  },
+  "location": "Thailand",
+  "company": "TIPP GROUP COMPANY LIMITED",
+  "representedBy": "Mr. Suthinan Tipgomut",
+  "address": "82/1 Mu 11 Khlong Nueng Sub-district, Khlong Luang District, Pathum Thani Province 12120, Thailand",
+  "optional": {
+    "position": "Director",
+    "taxCode": "010-556-317-1069"
+  },
+  "userId": {
+    "$oid": "67175cbd7e02c201eefe7983"
+  },
+  "createdAt": 1729586830507
+}, {
+  "_id": {
+    "$oid": "6717679470c3b451621ed764"
+  },
+  "location": "Philippines",
+  "company": "JEVI MARINE AND INDUSTRIAL CORPORATION",
+  "representedBy": "Mr Vic Ignacio",
+  "address": "Manila, Metro Manila, Philippines",
+  "optional": {
+    "position": "President"
+  },
+  "userId": {
+    "$oid": "67175cbd7e02c201eefe7983"
+  },
+  "createdAt": 1729587092334
+}, {
+  "_id": {
+    "$oid": "671768bbda170a8caca85c72"
+  },
+  "location": "Thailand",
+  "company": "THAWEECHOK WAREHOUSE 2 COMPANY LIMITED",
+  "representedBy": "Miss. Sujitra Thanapitak / Mr. Amared Thanapitak",
+  "address": "5 Mu 10, Suthep Sub-district, Mueang Chiang Mai District, Chiang Mai Province , Thailand",
+  "optional": {
+    "position": "Director",
+    "tel": "+6681 2357999",
+    "taxCode": "0505567017052"
+  },
+  "userId": {
+    "$oid": "67175cbd7e02c201eefe7983"
+  },
+  "createdAt": 1729587387469
+}, {
+  "_id": {
+    "$oid": "67176953fc0d49f0b3463e9d"
+  },
+  "location": "Thailand",
+  "company": "NEWPLAN ENGINEERING CO.,LTD",
+  "representedBy": "Dr. Artit Treepop",
+  "address": "116/112 Moo 3 Highway 331, Bo-Win Sub-district, Sriracha District, Chonburi 20230 Thailand",
+  "optional": {
+    "position": "Marketing Manager"
+  },
+  "userId": {
+    "$oid": "67175cbd7e02c201eefe7983"
+  },
+  "createdAt": 1729587539484
+}, {
+  "_id": {
+    "$oid": "67176a54948250276dcc1ed1"
+  },
+  "location": "Cambodia",
+  "company": "SO MUYLY",
+  "representedBy": "Ms. SO MUYLY",
+  "address": "15E0, 296str, Phum 2 village, Sangkat Toul Svayprey 2, Khan Chomkar Mon, Phnom Penh, Cambodia",
+  "optional": {
+    "idCode": "011000294"
+  },
+  "userId": {
+    "$oid": "67175cbd7e02c201eefe7983"
+  },
+  "createdAt": 1729587796276
+}, {
+  "_id": {
+    "$oid": "67176ad80cf787fd2caf7f20"
+  },
+  "location": "Australia",
+  "company": "METROWEST SERVICES PTY LTD",
+  "representedBy": "Mr. Mark Lewington",
+  "address": "70 Belmont Avenue, Belmont, Western Australia 6104.",
+  "optional": {
+    "position": "Group Strategy And Operations."
+  },
+  "userId": {
+    "$oid": "67175cbd7e02c201eefe7983"
+  },
+  "createdAt": 1729587928673
+}, {
+  "_id": {
+    "$oid": "67176b840cf787fd2caf7f21"
+  },
+  "location": "Cambodia",
+  "company": "ISI STEEL Co., Ltd.",
+  "representedBy": "",
+  "address": "ISI Tower, #1 KMH Blvd., Sangkat Chom Chao 1, Khan Porsenchey, Pnom Penh, Cambodia.",
+  "userId": {
+    "$oid": "67175cbd7e02c201eefe7983"
+  },
+  "createdAt": 1729588100190
+}, {
+  "_id": {
+    "$oid": "67176c200cf787fd2caf7f22"
+  },
+  "location": "Thailand",
+  "company": "GROW ECOVILLAGE KHAOYAI SOCIAL ENTERPRISE CO.,LTD",
+  "representedBy": "Mr. Poramet Sitthiwong",
+  "address": "297 Moo 6, Thanarat Rd,, Pakchong, Nakhonnatchasima 30130, Thailand",
+  "optional": {
+    "position": "Director"
+  },
+  "userId": {
+    "$oid": "67175cbd7e02c201eefe7983"
+  },
+  "createdAt": 1729588256275
+}]

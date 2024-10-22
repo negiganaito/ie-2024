@@ -1,6 +1,8 @@
 import authenticationClient from '@feathersjs/authentication-client'
 export {}
 
+export {}
+
 // For more information about this file see https://dove.feathersjs.com/guides/cli/client.html
 import { feathers } from '@feathersjs/feathers'
 
@@ -28,6 +30,8 @@ export function createClient(connection, authenticationOptions = {}) {
   client.configure(annexClient)
 
   client.configure(contractClient)
+
+  client.configure(customerClient)
 
   return client
 }

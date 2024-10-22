@@ -1,0 +1,10 @@
+[{
+  "_id": {
+    "$oid": "67175cbd7e02c201eefe7983"
+  },
+  "email": "tienlx97@dainghiasteel.vn",
+  "firstName": "Tiến",
+  "lastName": "Lê Xuân",
+  "createAt": 1729584317255,
+  "password": "$2a$10$qU7qXjpW4iWiwt8cxnfhoeNjY/hsFVwvepDMISD9sMh11F3zm2pyq"
+}]

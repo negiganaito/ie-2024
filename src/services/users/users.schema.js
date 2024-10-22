@@ -9,7 +9,8 @@ export const userSchema = Type.Object(
     _id: ObjectIdSchema(),
     email: Type.String(),
     password: Type.Optional(Type.String()),
-    createAt: Type.Number(),
+    firstName: Type.String(),
+    lastName: Type.String(),
   },
   { $id: 'User', additionalProperties: false },
 )
@@ -22,9 +23,13 @@ export const userExternalResolver = resolve({
 })
 
 // Schema for creating new entries
-export const userDataSchema = Type.Pick(userSchema, ['email', 'password'], {
-  $id: 'UserData',
-})
+export const userDataSchema = Type.Pick(
+  userSchema,
+  ['email', 'password', 'firstName', 'lastName'],
+  {
+    $id: 'UserData',
+  },
+)
 export const userDataValidator = getValidator(userDataSchema, dataValidator)
 export const userDataResolver = resolve({
   password: passwordHash({ strategy: 'local' }),
@@ -38,6 +43,12 @@ export const userPatchSchema = Type.Partial(userSchema, {
 export const userPatchValidator = getValidator(userPatchSchema, dataValidator)
 export const userPatchResolver = resolve({
   password: passwordHash({ strategy: 'local' }),
+  firstName: async (value) => {
+    return value
+  },
+  lastName: async (value) => {
+    return value
+  },
 })
 
 // Schema for allowed query properties
