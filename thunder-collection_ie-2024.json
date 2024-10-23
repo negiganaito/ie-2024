@@ -1,0 +1,174 @@
+{
+    "clientName": "Thunder Client",
+    "collectionName": "ie-2024",
+    "collectionId": "550b44ff-dbd2-440f-bf13-6e7aca71f7c7",
+    "dateExported": "2024-10-23T10:01:59.676Z",
+    "version": "1.2",
+    "folders": [
+        {
+            "_id": "daf559b5-188f-40e4-9c44-58d33ba83332",
+            "name": "users",
+            "containerId": "",
+            "created": "2024-10-19T04:08:49.941Z",
+            "sortNum": 10000
+        },
+        {
+            "_id": "06207552-c1ba-4b5f-8d15-19b9743e50a1",
+            "name": "login",
+            "containerId": "",
+            "created": "2024-10-21T04:25:26.116Z",
+            "sortNum": 20000
+        },
+        {
+            "_id": "44abcc02-0759-443a-9bee-24d1937e369f",
+            "name": "annexs",
+            "containerId": "",
+            "created": "2024-10-21T07:42:35.911Z",
+            "sortNum": 30000
+        },
+        {
+            "_id": "4ee01bb1-1bbe-40f6-82e6-81431f312d6f",
+            "name": "customers",
+            "containerId": "",
+            "created": "2024-10-22T08:06:20.290Z",
+            "sortNum": 40000
+        }
+    ],
+    "requests": [
+        {
+            "_id": "430bd700-bbd8-415d-895d-03bdadc161b9",
+            "colId": "550b44ff-dbd2-440f-bf13-6e7aca71f7c7",
+            "containerId": "daf559b5-188f-40e4-9c44-58d33ba83332",
+            "name": "get users",
+            "url": "http://localhost:3030/users",
+            "method": "GET",
+            "sortNum": 20000,
+            "created": "2024-10-19T04:09:00.346Z",
+            "modified": "2024-10-21T04:33:51.966Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6ImFjY2VzcyJ9.eyJpYXQiOjE3Mjk0ODUxNTIsImV4cCI6MTcyOTU3MTU1MiwiYXVkIjoiaHR0cHM6Ly95b3VyZG9tYWluLmNvbSIsInN1YiI6IjY3MTVkOTBkZGU3NjkwMDdiZjBmZDU0ZCIsImp0aSI6IjQwODliMzQyLTljODQtNGJjOS1iNTgyLWQxOGIyYzAyYTZmNSJ9.yFDMnxW8cuArCGvlcw0JVYODlIpkfiHHVxupCWf40JE"
+                }
+            ]
+        },
+        {
+            "_id": "4434d0bb-361b-4b8d-a5c8-37eb97f04201",
+            "colId": "550b44ff-dbd2-440f-bf13-6e7aca71f7c7",
+            "containerId": "daf559b5-188f-40e4-9c44-58d33ba83332",
+            "name": "create users",
+            "url": "http://localhost:3030/users",
+            "method": "POST",
+            "sortNum": 30000,
+            "created": "2024-10-19T04:12:20.149Z",
+            "modified": "2024-10-22T08:05:15.299Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"email\": \"tienlx97@dainghiasteel.vn\",\n  \"password\": \"loremispium\",\n  \"firstName\": \"Tiến\",\n  \"lastName\": \"Lê Xuân\"\n}",
+                "form": []
+            }
+        },
+        {
+            "_id": "55f9f065-d4b9-48ee-8c8b-36d8394d828a",
+            "colId": "550b44ff-dbd2-440f-bf13-6e7aca71f7c7",
+            "containerId": "06207552-c1ba-4b5f-8d15-19b9743e50a1",
+            "name": "login",
+            "url": "http://localhost:3030/authentication",
+            "method": "POST",
+            "sortNum": 40000,
+            "created": "2024-10-21T04:25:37.084Z",
+            "modified": "2024-10-21T04:32:32.988Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"email\": \"tienlx97@dainghiasteel.vn\",\n  \"password\": \"loremispium\",\n  \"strategy\": \"local\"\n}",
+                "form": []
+            }
+        },
+        {
+            "_id": "c8bb227c-1480-41d7-9ff7-fa22360051e6",
+            "colId": "550b44ff-dbd2-440f-bf13-6e7aca71f7c7",
+            "containerId": "44abcc02-0759-443a-9bee-24d1937e369f",
+            "name": "create annex",
+            "url": "http://localhost:3030/annexs",
+            "method": "POST",
+            "sortNum": 50000,
+            "created": "2024-10-21T07:42:54.518Z",
+            "modified": "2024-10-22T07:38:33.587Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6ImFjY2VzcyJ9.eyJpYXQiOjE3Mjk1NjA5MTAsImV4cCI6MTcyOTY0NzMxMCwiYXVkIjoiaHR0cHM6Ly95b3VyZG9tYWluLmNvbSIsInN1YiI6IjY3MTVkOTBkZGU3NjkwMDdiZjBmZDU0ZCIsImp0aSI6ImY0NjBkOTA1LWMyYmQtNDNlOC1hODY3LTRhYTFjN2QwNzE2NSJ9.0NkExS84unB8yMyVSmylo9v-SbBW74Jx8wYiPOaI7ok"
+                }
+            ],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"annexType\": 2,\n  \"annexCreationDate\": \"September 23rd 2024\",\n  \"annexNo\": \"01\",\n  \"contractNo\": \"24KCT28\",\n  \"projectName\": \"KNAI BANG CHATT WH 16.80X14.00M\",\n  \"itemName\": \"STEEL STRUCTURE-DRILLING HOLES\",\n  \"annexShortLocation\": \"CAMBODIA\",\n  \"contractSignedDate\": \"September 04th, 2024\",\n  \n  \"pAName\": \"SO MUYLY\",\n  \"pARepresented\": \"Ms. SO MUYLY\",\n  \"pAAddress\": \"15E0, 296str, Phum 2 village, Sangkat Toul Svayprey 2, Khan Chomkar Mon, Phnom Penh, Cambodia\",\n  \"pAIdCode\": \"P00634144\",\n  \n  \"pAAnnexSignName\": \"Ms. SO MUYLY\",\n  \n  \"termValue\": {\n    \"amountInWord\": \"123456 loremispium dollars\",\n    \"previousAmount\": \"165,520.00\",\n    \"additionalAmount\": \"26,847.00\",\n    \"totalAmount\": \"192,367.00\"\n  }\n}",
+                "form": []
+            }
+        },
+        {
+            "_id": "28626538-7abf-4e7e-8e42-a9d287e1b631",
+            "colId": "550b44ff-dbd2-440f-bf13-6e7aca71f7c7",
+            "containerId": "44abcc02-0759-443a-9bee-24d1937e369f",
+            "name": "get annexs",
+            "url": "http://localhost:3030/annexs",
+            "method": "GET",
+            "sortNum": 60000,
+            "created": "2024-10-21T07:49:01.437Z",
+            "modified": "2024-10-21T07:49:26.250Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6ImFjY2VzcyJ9.eyJpYXQiOjE3Mjk0OTY4MDAsImV4cCI6MTcyOTU4MzIwMCwiYXVkIjoiaHR0cHM6Ly95b3VyZG9tYWluLmNvbSIsInN1YiI6IjY3MTVkOTBkZGU3NjkwMDdiZjBmZDU0ZCIsImp0aSI6ImExNTM4OTFmLTE0M2QtNGU2Zi1hZWQ3LTYwMWRkOWFlYmI5MiJ9.MlmyVWZI4GCudr2agpinz3cdbunLTuaUeYTZSeqsGSA"
+                }
+            ]
+        },
+        {
+            "_id": "a305eaeb-99f4-445a-9b92-cc20c36bbd07",
+            "colId": "550b44ff-dbd2-440f-bf13-6e7aca71f7c7",
+            "containerId": "44abcc02-0759-443a-9bee-24d1937e369f",
+            "name": "create annex 0",
+            "url": "http://localhost:3030/annexs",
+            "method": "POST",
+            "sortNum": 60000,
+            "created": "2024-10-22T07:42:32.238Z",
+            "modified": "2024-10-22T07:45:18.627Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6ImFjY2VzcyJ9.eyJpYXQiOjE3Mjk1NjA5MTAsImV4cCI6MTcyOTY0NzMxMCwiYXVkIjoiaHR0cHM6Ly95b3VyZG9tYWluLmNvbSIsInN1YiI6IjY3MTVkOTBkZGU3NjkwMDdiZjBmZDU0ZCIsImp0aSI6ImY0NjBkOTA1LWMyYmQtNDNlOC1hODY3LTRhYTFjN2QwNzE2NSJ9.0NkExS84unB8yMyVSmylo9v-SbBW74Jx8wYiPOaI7ok"
+                }
+            ],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"annexType\": 0,\n  \"annexCreationDate\": \"September 23rd 2024\",\n  \"annexNo\": \"01\",\n  \"contractNo\": \"24KCT28\",\n  \"projectName\": \"KNAI BANG CHATT WH 16.80X14.00M\",\n  \"itemName\": \"STEEL STRUCTURE-DRILLING HOLES\",\n  \"annexShortLocation\": \"CAMBODIA\",\n  \"contractSignedDate\": \"September 04th, 2024\",\n  \n  \"pAName\": \"SO MUYLY\",\n  \"pARepresented\": \"Ms. SO MUYLY\",\n  \"pAAddress\": \"15E0, 296str, Phum 2 village, Sangkat Toul Svayprey 2, Khan Chomkar Mon, Phnom Penh, Cambodia\",\n  \"pAIdCode\": \"P00634144\",\n  \n  \"pAAnnexSignName\": \"Ms. SO MUYLY\",\n  \n  \"termValue\": \"Loremispium\\n-123\\n-456\"\n}",
+                "form": []
+            }
+        },
+        {
+            "_id": "d76a5bad-6424-4ec8-a195-fa1e2ed16059",
+            "colId": "550b44ff-dbd2-440f-bf13-6e7aca71f7c7",
+            "containerId": "4ee01bb1-1bbe-40f6-82e6-81431f312d6f",
+            "name": "create customer",
+            "url": "http://localhost:3030/customers",
+            "method": "POST",
+            "sortNum": 70000,
+            "created": "2024-10-22T08:06:29.491Z",
+            "modified": "2024-10-22T09:10:56.278Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6ImFjY2VzcyJ9.eyJpYXQiOjE3Mjk1ODQ0MTEsImV4cCI6MTcyOTY3MDgxMSwiYXVkIjoiaHR0cHM6Ly95b3VyZG9tYWluLmNvbSIsInN1YiI6IjY3MTc1Y2JkN2UwMmMyMDFlZWZlNzk4MyIsImp0aSI6ImQzMTIzMWQ5LTgzMDAtNGYzMS1iN2U4LWU2NWU5M2NlMGY4MCJ9.NoU9mUewb62QluC8_THkLpMZ77FrUQNEmG0CmU-YR7c"
+                }
+            ],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"location\": \"Thailand\",\n  \"company\": \"GROW ECOVILLAGE KHAOYAI SOCIAL ENTERPRISE CO.,LTD\",\n  \"representedBy\": \"Mr. Poramet Sitthiwong\",\n  \"address\": \"297 Moo 6, Thanarat Rd,, Pakchong, Nakhonnatchasima 30130, Thailand\",\n  \"optional\": {\n    \"position\": \"Director\"\n  }\n}",
+                "form": []
+            }
+        }
+    ],
+    "ref": "Za3tSZf4xFCf5vPU0PWVWO9z9s3qcgKdG2-PNZYxW_G2m_6pstoFAM6AxQLmer1TiHvyLsBXVRcSGqCPmreERg"
+}
