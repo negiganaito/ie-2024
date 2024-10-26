@@ -23,7 +23,11 @@ const app = express(feathers())
 
 // Load app configuration
 app.configure(configuration(configurationValidator))
-app.use(cors())
+app.use(cors({
+  origin: 'http://localhost:8000', // Allow calls from this origin
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH'], // Allow specific HTTP methods
+  credentials: true, // Enable credentials if necessary (e.g., for cookies or auth headers)
+}))
 app.use(json())
 app.use(urlencoded({ extended: true }))
 // Host the public folder
