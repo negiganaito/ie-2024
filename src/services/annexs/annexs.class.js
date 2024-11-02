@@ -4,6 +4,11 @@ import { processAnnexExcel } from './annex.excel-template.js'
 
 // By default calls the standard MongoDB adapter service methods but can be customized with your own functionality.
 export class AnnexService extends MongoDBService {
+  constructor(options) {
+    super(options)
+    this.app = options.app
+  }
+
   // Override the create method to handle the request without saving it to MongoDB
   async create(data, _params) {
     try {
@@ -27,6 +32,7 @@ export function getOptions(app) {
   return {
     paginate: app.get('paginate'),
     Model: app.get('mongodbClient').then(db => db.collection('annexs')),
+    app,
   }
 }
 

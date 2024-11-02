@@ -1,7 +1,7 @@
 export const annexTermTemplate = {
   1: `As the result of discussion, Party A and Party B agree the information company of the agreement as follows :\n{{information}}`,
 
-  2: `As the result of discussion, Party A and Party B agree the total price after additional item due in Quotation is: before TAX: USD {{additionalAmount}} (In words: {{amountInWord}})
+  2: `As the result of discussion, All party agree the total price after additional item due in Quotation is: before TAX: USD {{additionalAmount}} (In words: {{amountInWord}})
 
 - Previous amount: {{previousAmount}} USD.
 - Additional amount: {{additionalAmount}} USD.

@@ -32,13 +32,13 @@ export async function processAnnexExcel(data) {
   } = data
 
   const requireAnnexData = {
-    annex_creation_date: annexCreationDate,
-    annex_no: annexNo,
-    contract_no: contractNo,
-    project_name: projectName,
-    item_name: itemName,
-    annex_short_location: annexShortLocation,
-    contract_signed_date: contractSignedDate,
+    annex_creation_date: annexCreationDate, //
+    annex_no: annexNo, //
+    contract_no: contractNo, //
+    project_name: projectName, //
+    item_name: itemName, //
+    annex_short_location: annexShortLocation, //
+    contract_signed_date: contractSignedDate, //
     p_a_name: pAName,
     p_a_represented: pARepresented,
     p_a_address: pAAddress,

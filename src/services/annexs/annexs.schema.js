@@ -19,6 +19,7 @@ const annexSchema = Type.Object(
     annexShortLocation: Type.String(),
     contractSignedDate: Type.String(),
     //
+    pAId: Type.String({ objectid: true }),
     pAName: Type.String(),
     pARepresented: Type.String(),
     pAAddress: Type.String(),
