@@ -12,7 +12,9 @@ export class AnnexService extends MongoDBService {
   // Override the create method to handle the request without saving it to MongoDB
   async create(data, _params) {
     try {
-      await processAnnexExcel(data) // Delegate to utility function
+      const customer = await this.app.service('customers').get(data.pAId)
+
+      await processAnnexExcel({ ...data, customer }) // Delegate to utility function
       return { data: 'File saved with styles retained.' }
     }
     catch (err) {
@@ -21,7 +23,7 @@ export class AnnexService extends MongoDBService {
     }
   }
 
-  // Similarly, you can override other methods like `find`, `patch`, etc.
+  // Similarly, you can override other methods like `find`, `patch`, etc`.
   async find() {
     // Optionally return mock or in-memory data if necessary
     return []

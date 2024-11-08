@@ -20,13 +20,7 @@ const annexSchema = Type.Object(
     contractSignedDate: Type.String(),
     //
     pAId: Type.String({ objectid: true }),
-    pAName: Type.String(),
-    pARepresented: Type.String(),
-    pAAddress: Type.String(),
-    pAIdCode: Type.String(),
-
     pAAnnexSignName: Type.String(),
-
     termValue: Type.Any(),
   },
   { $id: 'Annex', additionalProperties: true },
@@ -84,7 +78,6 @@ const annexDataSchema = Type.Pick(annexSchema, ['text'], {
 
 const annexDataValidator = getValidator(annexDataSchema, dataValidator)
 const annexDataResolver = resolve({
-
   createdAt: async () => {
     return Date.now()
   },
